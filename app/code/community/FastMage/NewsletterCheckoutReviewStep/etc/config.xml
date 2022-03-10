@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <FastMage_NewsletterCheckoutReviewStep>
+            <version>1.0.0</version>
+        </FastMage_NewsletterCheckoutReviewStep>
+    </modules>
+    <global>
+        <models>
+            <fastmage_newslettercheckoutreviewstep>
+                <class>FastMage_NewsletterCheckoutReviewStep_Model</class>
+            </fastmage_newslettercheckoutreviewstep>
+        </models>
+        <events>
+            <checkout_submit_all_after>
+                <observers>
+                    <newsletter_subscription_checkout_step>
+                        <class>fastmage_newslettercheckoutreviewstep/observer</class>
+                        <method>subscribe</method>
+                    </newsletter_subscription_checkout_step>
+                </observers>
+            </checkout_submit_all_after>
+        </events>
+    </global>
+    <frontend>
+        <events>
+            <core_block_abstract_to_html_after>
+                <observers>
+                    <add_subscription_checkbox_review_step_checkout>
+                        <class>fastmage_newslettercheckoutreviewstep/observer</class>
+                        <method>addCheckbox</method>
+                    </add_subscription_checkbox_review_step_checkout>
+                </observers>
+            </core_block_abstract_to_html_after>
+        </events>
+    </frontend>
+</config>

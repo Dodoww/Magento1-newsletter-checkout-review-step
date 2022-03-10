@@ -10,7 +10,7 @@ class FastMage_NewsletterCheckoutReviewStep_Model_Observer
             $checked = $this->isCheckboxCheckedByDefault() ? 'checked="checked"' : '';
             $html = $observer->getTransport()->getHtml();
             $checkboxHtml = '<li><p class="agree">'
-                . '<input id="subscribe_newsletter" name="is_subscribed" checked="checked" value="1" '. $checked .'class="checkbox" type="checkbox" title="' . $this->__($this->getCheckboxLabelText() . '" />'
+                . '<input id="subscribe_newsletter" name="is_subscribed" checked="checked" value="1" '. $checked .'class="checkbox" type="checkbox" title="' . $this->__($this->getCheckboxLabelText()) . '" />'
                 . '<label for="subscribe_newsletter">' . $this->__($this->getCheckboxLabelText()) . '</label>'
                 . '</p></li>';
             $html = str_replace('</ol>', $checkboxHtml . '</ol>', $html);
